@@ -1,0 +1,19 @@
+<h3 class="text-center text-secondary">Employees</h3>
+<app-data-table [rowData]="employees" [colsTemplate]="cols" [headings]="headings">
+</app-data-table>
+
+
+<ng-template #id let-data="data">
+    <span class="badge badge-dark">{{data.id}}</span>
+</ng-template>
+<ng-template #name let-data="data">
+    <span class="badge badge-success">{{data.name}}</span>
+</ng-template>
+
+<ng-template #des let-data="data">{{data.designation}}</ng-template>
+<ng-template #exp let-data="data">
+    <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width' : data.exp*10 + '%'}" aria-valuemin="0"
+            aria-valuemax="10">{{data.exp}} years</div>
+    </div>
+</ng-template>

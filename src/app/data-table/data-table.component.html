@@ -1,0 +1,13 @@
+<table class="table">
+    <tr>
+        <th *ngFor="let heading of headings">
+            {{heading}}
+        </th>
+    </tr>
+    <tr *ngFor="let row of rowData">
+        <td *ngFor="let col of colsTemplate">
+            <ng-template [ngTemplateOutlet]="col" [ngTemplateOutletContext]="{data:row}">
+            </ng-template>
+        </td>
+    </tr>
+</table>
